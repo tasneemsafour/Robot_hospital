@@ -3,11 +3,14 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:hospital_application/Models/Task_Model.dart';
 import 'package:hospital_application/Models/task_categoryClass.dart';
+import 'package:hospital_application/Screens/Speech_Screen.dart';
+import 'package:hospital_application/Screens/Video_Screen.dart';
 import 'package:hospital_application/Screens/charging_screen.dart';
 import 'package:hospital_application/Screens/patients_screen.dart';
 import 'package:flutter/src/rendering/box.dart';
-import 'package:hospital_application/Screens/controll_screen.dart';
+import 'package:hospital_application/Screens/Controls/Joystick_screen.dart';
 import 'package:hospital_application/Screens/MapScreen.dart';
+
 
 class GridDashboard extends StatelessWidget {
   //--------------------------------------------------------------------------
@@ -16,16 +19,16 @@ class GridDashboard extends StatelessWidget {
       Navigator.of(context).pushNamed(PationtScreen.routName);
     }
     if (action == 2) {
-      //Navigator.push(context,new MaterialPageRoute(builder: (context) => new SecondScreen()),);
+      Navigator.of(context).pushNamed(HomePage.routName);
     }
     if (action == 3) {
       Navigator.of(context).pushNamed(MapScreen.routName);
     }
     if (action == 4) {
-      //Not implement yet
+      Navigator.of(context).pushNamed(MyHomePage.routName);
     }
     if (action == 5) {
-      Navigator.of(context).pushNamed(controll_screen.routName);
+      Navigator.of(context).pushNamed(Joystick_screen.routeName);
       //Not implement yet
     }
     if (action == 6) {

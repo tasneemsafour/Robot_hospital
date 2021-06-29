@@ -83,10 +83,11 @@ class _taskScreenState extends State<taskScreen> {
                       //width: MediaQuery.of(context).size.width*0.85,
                       child: gradient_button("Send Task"),
                       onTap: () {
-                        Navigator.of(context).pushNamed(
-                          sort_TaskScreen.routName,
-                        );
-                        //Mission.submitTask(context, snapshot22.data, cat);
+                        Mission.submitTask(context, snapshot22.data, cat);
+                        //Navigator.of(context).pushNamed(
+                          //sort_TaskScreen.routName,
+                        //);
+
                         //Navigator.of(context).pop(context);
                       }),
                 ),

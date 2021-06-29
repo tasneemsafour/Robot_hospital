@@ -1,7 +1,10 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.metalayzor.hospital_application">
     <!--<uses-permission android:name="android.permission.INTERNET" />-->
-   <application
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.RECORD_AUDIO"/>
+
+    <application
         android:label="hospital_application"
         android:icon="@mipmap/ic_launcher">
         <activity

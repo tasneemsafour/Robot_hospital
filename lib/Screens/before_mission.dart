@@ -1,6 +1,9 @@
-
+/**
 import 'package:flutter/material.dart';
-
+import 'package:hospital_application/Models/MissionModel.dart';
+import 'package:hospital_application/Models/mission.dart';
+import 'package:hospital_application/Widget/gradient_Button.dart';
+import 'package:hospital_application/API/pushMissionAPI.dart' ;
 class sort_TaskScreen extends StatefulWidget {
 
 
@@ -10,15 +13,8 @@ class sort_TaskScreen extends StatefulWidget {
 }
 
 class _sort_TaskScreenState extends State<sort_TaskScreen> {
-  List<String> myCustomList = [
-    "first element",
-    "second element",
-    "third element",
-    "fifth element",
-    "example 6",
-    "example 7",
-    "example 8",
-  ];
+  //List<Map<String,String>> mm = mission.taskss;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -27,12 +23,13 @@ class _sort_TaskScreenState extends State<sort_TaskScreen> {
         centerTitle: true,
         backgroundColor: Colors.blue[200],
       ),
-      body: Center(
-        child: ReorderableListView(
-          children: List.generate(myCustomList.length, (index) {
+      body: Column(
+        children: [
+         ReorderableListView(
+          children: List.generate(mm.length, (index) {
             return ListTile(
               key: UniqueKey(),
-              title: Text(myCustomList[index]),
+              title: Text(mm[index].keys.elementAt(0)),
             );
           }),
           onReorder: (int oldIndex, int newIndex) {
@@ -40,13 +37,20 @@ class _sort_TaskScreenState extends State<sort_TaskScreen> {
               if (newIndex > oldIndex) {
                 newIndex -= 1;
               }
-              final String newString = myCustomList.removeAt(oldIndex);
-              myCustomList.insert(newIndex, newString);
+              final Map<String,String> newString = mm.removeAt(oldIndex);
+              mm.insert(newIndex, newString);
 
             });
           },
         ),
+          GestureDetector(
+            //width: MediaQuery.of(context).size.width*0.85,
+              child: gradient_button("Send Mission"),
+              onTap: () {
+    }
+          )
+    ]
       ),
     );
   }
-}
+ **/

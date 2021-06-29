@@ -7,7 +7,7 @@ Future<List<Task>> getquestion() async {
   String token2= "token "+token.tokenName;
 
   final taskData = await http
-      .get(Uri.parse("http://193.227.20.84:443/Tasks/TaskAPI/"), headers: {
+      .get(Uri.parse("http://192.168.0.105:443/Tasks/TaskAPI/"), headers: {
     HttpHeaders.contentTypeHeader: "application/json",
     HttpHeaders.authorizationHeader:
         // "token b194bda7a92bc7000d569b830a565a89a2b66993"

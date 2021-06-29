@@ -1,11 +1,48 @@
-class MissionModel{
-  int id ;
-  String taskname ;
-  Map<String, String> param ;
+import 'package:flutter/cupertino.dart';
+import 'package:hospital_application/Models/Tasks.dart';
 
-  MissionModel({this.id,this.taskname , this.param});
+class mission {
+  String _id="1";
+  String _startTime ="29/6";
+ static int numTasks=0;
+  static List<Tasks> taskss =new List<Tasks>();
 
-  MissionModel.tojson(){
+  mission({String id, String startTime, String numTasks, List<Tasks> tasks}) {
+    this._id = id;
+    this._startTime = startTime;
+    //this._numTasks = numTasks;
+     //tasks=;
+  }
 
+  String get id => _id;
+  set id(String id) => _id = id;
+  String get startTime => _startTime;
+  set startTime(String startTime) => _startTime = startTime;
+  //String get numTasks => _numTasks.toString();
+  //set numTasks(String numTasks) => _numTasks = numTasks.toString();
+  //List<Tasks> get tasks => _tasks;
+  //set tasks(List<Tasks> tasks) => _tasks = tasks;
+
+  mission.fromJson(Map<String, dynamic> json) {
+    _id = json['id'];
+    _startTime = json['start_time'];
+    numTasks = json['num_tasks'];
+    if (json['tasks'] != null) {
+      taskss = new List<Tasks>();
+      json['tasks'].forEach((v) {
+        taskss.add(new Tasks.fromJson(v));
+      });
+    }
+  }
+
+  Map<String, dynamic> toJson() {
+    final Map<String, dynamic> data = new Map<String, dynamic>();
+    data['id'] = this._id;
+    data['start_time'] = this._startTime;
+    data['num_tasks'] = numTasks.toString();
+    if (taskss != null) {
+      data['tasks'] = taskss.map((v) => v.toJson()).toList();
+    }
+    return data;
   }
 }

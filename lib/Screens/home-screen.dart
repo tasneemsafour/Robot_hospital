@@ -6,8 +6,7 @@ import 'package:hospital_application/Widget/drewer.dart';
 import '../Widget/gridOfHome_widget.dart';
 import 'package:hospital_application/API/task_api.dart';
 import 'package:hospital_application/API/task_category.dart';
-
-class Home_screen extends StatefulWidget {
+ class Home_screen extends StatefulWidget {
   static const routName = '/Home_Screen';
   @override
   Home_screenState createState() => new Home_screenState();
@@ -15,10 +14,9 @@ class Home_screen extends StatefulWidget {
 
 class Home_screenState extends State<Home_screen> {
   @override
-  initState() {
+  initState(){
     super.initState();
   }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
