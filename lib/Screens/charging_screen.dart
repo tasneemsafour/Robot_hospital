@@ -99,7 +99,7 @@ class _chargingScreenState extends State<chargingScreen> {
                               "ID_robot": "1",
                               "ID_station": valueChoose.toString(),
                             };
-                            Mission.addMission("go to charging station", m);
+                            Mission.addMission("go to charging station", m ," ");
                             Navigator.of(context).pop(context);
                           }),
                     ),

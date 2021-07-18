@@ -110,19 +110,19 @@ class GridDashboard extends StatelessWidget {
       title: "Voice",
       subtitle: "Celling robot",
       event: " ",
-      img: "assets/images/voice.jpg",
+      img: "assets/images/voice.png",
       action: 2);
   Items item3 = new Items(
       title: "Locations",
       subtitle: "Robot going to somewhere",
       event: "",
-      img: "assets/images/map.jpg",
+      img: "assets/images/map.png",
       action: 3);
   Items item4 = new Items(
       title: "VideoCell",
-      subtitle: "",
+      subtitle: "Start video call ",
       event: "",
-      img: "assets/images/video.jpg",
+      img: "assets/images/video.png",
       action: 4);
   Items item5 = new Items(
       title: "Motion",
@@ -132,8 +132,8 @@ class GridDashboard extends StatelessWidget {
       action: 5);
   Items item6 = new Items(
       title: "Charging",
-      subtitle: "",
-      event: "2 Items",
+      subtitle: "Charging places",
+      event: "",
       img: "assets/images/charging.png",
       action: 6);
   @override

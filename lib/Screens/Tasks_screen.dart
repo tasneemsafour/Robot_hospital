@@ -83,10 +83,10 @@ class _taskScreenState extends State<taskScreen> {
                       //width: MediaQuery.of(context).size.width*0.85,
                       child: gradient_button("Send Task"),
                       onTap: () {
-                        Mission.submitTask(context, snapshot22.data, cat);
-                        //Navigator.of(context).pushNamed(
-                          //sort_TaskScreen.routName,
-                        //);
+                       // Mission.submitTask(context);
+                        Navigator.of(context).pushNamed(
+                          sort_TaskScreen.routName,
+                        );
 
                         //Navigator.of(context).pop(context);
                       }),
@@ -140,7 +140,6 @@ class _taskScreenState extends State<taskScreen> {
   Widget build(BuildContext context) {
     final patientID =
         ModalRoute.of(context).settings.arguments as Map<String, dynamic>;
-
     return Scaffold(
       appBar: AppBar(
         title: Text("Tasks"),
@@ -156,7 +155,8 @@ class _taskScreenState extends State<taskScreen> {
                   child: CircularProgressIndicator(),
                 );
               } else {
-                return getttTask(snapshot.data, patientID["id"]);
+                //return getttTask(snapshot.data, patientID["id"]);
+              return getttTask(snapshot.data, 5);
               }
             }),
       ),

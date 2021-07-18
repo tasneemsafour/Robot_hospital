@@ -8,7 +8,7 @@ Future<List<chargingStation>> getChargingStation() async {
   String token2= "token "+token.tokenName;
 
   final Dataa = await http.get(
-      Uri.parse("http://192.168.0.105:443/Places/ChargingStationAPI/"),
+      Uri.parse(token.url+"/Places/ChargingStationAPI/"),
       headers: {
         HttpHeaders.contentTypeHeader: "application/json",
         HttpHeaders.authorizationHeader:token2

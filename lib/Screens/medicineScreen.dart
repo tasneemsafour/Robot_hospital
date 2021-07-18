@@ -87,7 +87,7 @@ class _medicineScreenState extends State<medicineScreen> {
                                 creatIdList(valueChoose, snapshot.data)
                                     .toString(),
                           };
-                          Mission.addMission("medicine recognition",m);
+                          Mission.addMission("medicine recognition",m,value["patientid"]);
                           Navigator.of(context).pop(context);
                         }),
                   ],

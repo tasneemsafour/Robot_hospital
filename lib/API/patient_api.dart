@@ -7,7 +7,7 @@ Future<List<Patient>> gitAllPatients() async {
   String token2= "token "+token.tokenName;
 
   final patientData = await http
-      .get(Uri.parse("http://192.168.0.105:443/Person/PatientAPI/"), headers: {
+      .get(Uri.parse(token.url + "/Person/PatientAPI/"), headers: {
     HttpHeaders.contentTypeHeader: "application/json",
     HttpHeaders.authorizationHeader:token2
        // "token b194bda7a92bc7000d569b830a565a89a2b66993"

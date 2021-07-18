@@ -21,47 +21,48 @@ class check_task {
     if (taskName == "investigate crona") {
       Map<String, String> m = {
         "id_invistegation_type": "crona_investegation",
-        "id_patient": patientId.toString()
+        //"id_patient": patientId.toString()
       };
-      Mission.addMission("investigate crona", m);
+      Mission.addMission("investigate crona", m,patientId.toString());
     } else if (taskName == "investigate fever") {
       Map<String, String> m = {
         "id_invistegation_type": "favor_investegation",
-        "id_patient": patientId.toString()
+        //"id_patient": patientId.toString()
       };
-      Mission.addMission("investigate fever", m);
-    } else if (taskName == "scan report (OCR)") {
+      Mission.addMission("investigate fever", m,patientId.toString());
+    }
+    else if (taskName == "scan report (OCR)") {
       print("nn");
       Map<String, String> m = {
         "service_type": "scan_OCR",
-        "id_patient": patientId.toString()
+        " ": " "
       };
-      Mission.addMission("scan report (OCR)", m);
+      Mission.addMission("scan report (OCR)", m,patientId.toString());
       print("22");
     } else if (taskName == "scan heart pulses") {
       Map<String, String> m = {
         "service_type": "scan_heart_pulses",
-        "id_patient": patientId.toString()
+        " ":" "
       };
-      Mission.addMission("scan heart pulses", m);
+      Mission.addMission("scan heart pulses", m,patientId.toString());
     } else if (taskName == "medicine recognition") {
       Navigator.of(context).pushNamed(medicineScreen.routName, arguments: {
         "task": taskName,
-        "patientid": patientId,
+        "patientid": patientId.toString(),
       });
     } else if (taskName == "ask patient") {
       Navigator.of(context).pushNamed(taskParameter.routName, arguments: {
         "task": taskName,
-        "patientid": patientId,
+        "patientid": patientId.toString(),
         "text": "questions",
       });
     } else if (taskName == "food_order") {
       Navigator.of(context).pushNamed(foodScreen.routName, arguments: {
         "task": taskName,
-        "patientid": patientId,
+        "patientid": patientId.toString(),
         "text": "questions",
       });
-    } else if (taskName == "display to location X to Y") {
+    } else if (taskName == "display location X to Y") {
       Navigator.of(context).pushNamed(MapScreen.routName, arguments: {});
     } else if (taskName == "hand control") {
       Navigator.of(context).pushNamed(controll_screen.routName, arguments: {});

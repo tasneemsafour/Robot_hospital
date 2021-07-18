@@ -76,10 +76,10 @@ class _taskParameterState extends State<taskParameter> {
                   onTap: () {
                     Map<String, String> m = {
                       "service_type": "ask_patient",
-                      "id_patient": value["patientid"].toString(),
+                      //"id_patient": value["patientid"].toString(),
                       "id_questions": valueChoose,
                     };
-                    Mission.addMission("ask patient", m);
+                    Mission.addMission("ask patient", m,value["patientid"]);
                     Navigator.of(context).pop(context);
                   }),
             ],

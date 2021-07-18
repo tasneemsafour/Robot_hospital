@@ -4,7 +4,6 @@
   String _paint;
   String _arg1;
   String _arg2;
-  String _taskName;
 
   Tasks(
       {String id,
@@ -12,13 +11,12 @@
         String paint,
         String arg1,
         String arg2,
-        String taskName}) {
+      }) {
     this._id = id;
     this._taskname = taskname;
     this._paint = paint;
     this._arg1 = arg1;
     this._arg2 = arg2;
-    this._taskName = taskName;
   }
 
   String get id => _id;
@@ -31,8 +29,7 @@
   set arg1(String arg1) => _arg1 = arg1;
   String get arg2 => _arg2;
   set arg2(String arg2) => _arg2 = arg2;
-  String get taskName => _taskName;
-  set taskName(String taskName) => _taskName = taskName;
+
 
   Tasks.fromJson(Map<String, dynamic> json) {
     _id = json['id'];
@@ -40,7 +37,6 @@
     _paint = json['paint'];
     _arg1 = json['arg1'];
     _arg2 = json['arg2'];
-    _taskName = json['task_name'];
   }
 
   Map<String, dynamic> toJson() {
@@ -50,7 +46,7 @@
     data['paint'] = this._paint;
     data['arg1'] = this._arg1;
     data['arg2'] = this._arg2;
-    data['task_name'] = this._taskName;
+
     return data;
   }
 }

@@ -95,9 +95,9 @@ class _foodScreenState extends State<foodScreen> {
                             Map<String, String> m = {
                               "ID_food_type": valchange1,
                               "list_of_item": valchange2,
-                              "ID_patient": value["patientid"].toString(),
+                              //"ID_patient": value["patientid"].toString(),
                             };
-                            Mission.addMission("food_order", m);
+                            Mission.addMission("food_order", m,value["patientid"]);
                             Navigator.of(context).pop(context);
                           }),
                     ),

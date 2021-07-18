@@ -23,7 +23,7 @@ import 'Screens/controll_screen.dart';
 import './Screens/Controls/Joystick_screen.dart';
 import './Screens/Controls/movementAction.dart';
 import './Screens/Controls/setting_screen.dart';
-
+import './Screens/MainHome_Screen.dart';
 
 void main() {
   runApp(MyApp());
@@ -55,7 +55,7 @@ class _MyAppState extends State<MyApp> {
             home: AnimatedSplashScreen(
               splash: ('assets/images/robpng.png'),
               backgroundColor: Colors.blue[200],
-              nextScreen: sign_up(),
+              nextScreen:CarouselDemo(),
             ),
             debugShowCheckedModeBanner: false,
             routes: <String, WidgetBuilder>{
@@ -69,7 +69,7 @@ class _MyAppState extends State<MyApp> {
               foodScreen.routName: (ctx) => foodScreen(),
               medicineScreen.routName: (ctx) => medicineScreen(),
               chargingScreen.routName: (ctx) => chargingScreen(),
-              //sort_TaskScreen.routName: (ctx) => sort_TaskScreen(),
+              sort_TaskScreen.routName: (ctx) => sort_TaskScreen(),
               Home_screen.routName: (ctx) => Home_screen(),
               MapScreen.routName: (ctx) => MapScreen(),
               controll_screen.routName: (ctx) => controll_screen(),
@@ -78,6 +78,8 @@ class _MyAppState extends State<MyApp> {
               MovementAction.routName:(ctx)=>MovementAction(),
               HomePage.routName:(ctx)=>HomePage(),
               MyHomePage.routName:(ctx)=>MyHomePage(),
+              CarouselDemoState.routName:(ctx)=>Home_screen(),
+
             }));
   }
 }

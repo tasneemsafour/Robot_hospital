@@ -85,8 +85,7 @@ class _sign_upState extends State<sign_up> {
                   //mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: <Widget>[
                     Positioned(
-                      child: FadeAnimation(
-                          1,
+                      child:
                           Container(
                             height: MediaQuery.of(context).size.height * 0.3,
                             margin: EdgeInsets.only(top: 50),
@@ -100,10 +99,8 @@ class _sign_upState extends State<sign_up> {
                               ),
                             ),
                           )),
-                    ),
                     Positioned(
-                      child: FadeAnimation(
-                          1.3,
+                      child:
                           Container(
                             height: MediaQuery.of(context).size.height * 0.2,
                             width: MediaQuery.of(context).size.width * 0.85,
@@ -148,19 +145,13 @@ class _sign_upState extends State<sign_up> {
                               ],
                             ),
                           )),
-                    ),
                     //SizedBox(
                     //height: 30,
                     //),
-                    FadeAnimation(
-                      1.5,
                       msgError,
-                    ),
                     SizedBox(
                       height: 80,
                     ),
-                    FadeAnimation(
-                        1.8,
                         Padding(
                           padding: const EdgeInsets.all(20.0),
                           child: GestureDetector(
@@ -173,7 +164,7 @@ class _sign_upState extends State<sign_up> {
                               // Navigator.pushNamed(context, 'LoginSuccessScreen');
                             },
                           ),
-                        )),
+                        ),
                     SizedBox(
                       height: 70,
                     ),

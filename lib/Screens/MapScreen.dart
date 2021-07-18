@@ -106,7 +106,7 @@ class _MapScreenState extends State<MapScreen> {
                       "id_location_x": valchange1,
                       "id_location_y": valchange2,
                     };
-                    Mission.addMission("go_to_location_x", m);
+                    Mission.addMission("go_to_location_x", m,value["patientid"]);
                     Navigator.of(context).pop(context);
                   }),
             ),
