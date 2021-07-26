@@ -6,12 +6,11 @@ import '../Models/patientClass.dart';
 
 class pationtItem extends StatelessWidget {
   Patient patient;
-
   pationtItem({this.patient});
 
   Widget _text(String title, Color color, double fontSize, String value) {
     return Text(
-      "  " + title + " : " + value,
+      title ,
       style: TextStyle(
         fontSize: fontSize,
         fontWeight: FontWeight.w500,
@@ -72,8 +71,7 @@ class pationtItem extends StatelessWidget {
                     ),
                     Column(
                       children: [
-                        _text(" Name ", Colors.white, 18,
-                            patient.first_name + " " + patient.last_name),
+                        _text(" Name ", Colors.white, 18,patient.first_name ),
                         SizedBox(
                           height: 25,
                         ),
