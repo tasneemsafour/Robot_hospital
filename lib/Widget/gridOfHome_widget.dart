@@ -139,6 +139,7 @@ class GridDashboard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     List<Items> myList = [item1, item2, item3, item4, item5, item6];
+    
     // var color = Colors.blue[400];
     return ListView(
       children: <Widget>[

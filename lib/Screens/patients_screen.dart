@@ -13,9 +13,9 @@ class PationtScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Patients"),
+        title: Text("Patients" , style: TextStyle (color: Colors.white)),
         centerTitle: true,
-        backgroundColor: Colors.blue[200],
+        backgroundColor: Theme.of(context).accentColor,
       ),
       body: Container(
         child: FutureBuilder(

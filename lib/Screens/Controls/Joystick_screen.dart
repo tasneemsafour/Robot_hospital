@@ -87,7 +87,7 @@ class _Joystick_screenState extends State<Joystick_screen> {
    //hand and mouth
    Myswitch(String diriction , bool boolval){
      return Switch(
-            activeColor:Theme.of(context).primaryColor, 
+            activeColor:Theme.of(context).accentColor, 
             value: boolval, 
             onChanged:(newValue) {
               setState((){
@@ -127,7 +127,7 @@ class _Joystick_screenState extends State<Joystick_screen> {
                                       print(event);
                                     },
                                     shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(50.0)),
-                                    color: Theme.of(context).primaryColor,
+                                    color: Theme.of(context).accentColor,
                                     height: 50,
                                     child: Text("Submit",style: TextStyle(color: Colors.white,fontSize: 20.0),),
                   ),
@@ -144,7 +144,9 @@ class _Joystick_screenState extends State<Joystick_screen> {
  
   Widget build(BuildContext context) {
     return Scaffold(
-     appBar: AppBar(title:Text("Robot Control",style: TextStyle (color: Colors.white))),
+     appBar: AppBar(
+       backgroundColor: Theme.of(context).accentColor,
+       title:Text("Robot Control",style: TextStyle (color: Colors.white))),
      body: Center(
        child: Container(
          color: Colors.white,
@@ -185,7 +187,7 @@ class _Joystick_screenState extends State<Joystick_screen> {
                       margin: EdgeInsets.only(top: 60,left: MediaQuery.of(context).size.width*0.4,),
                      // width: MediaQuery.of(context).size.width,
                       child: Switch(
-                          activeColor:Theme.of(context).primaryColor, 
+                          activeColor:Theme.of(context).accentColor, 
                           value: mouthtbool, 
                           onChanged:(newValue) {
                             setState((){
@@ -209,7 +211,7 @@ class _Joystick_screenState extends State<Joystick_screen> {
                       child: Row(children: [
                          //left hand 
                       Switch(
-                          activeColor:Theme.of(context).primaryColor, 
+                          activeColor:Theme.of(context).accentColor, 
                           value: leftbool, 
                           onChanged:(newValue) {
                             setState((){
@@ -221,7 +223,7 @@ class _Joystick_screenState extends State<Joystick_screen> {
                       SizedBox(width: 60,),
                          //right hand 
                       Switch(
-                          activeColor:Theme.of(context).primaryColor, 
+                          activeColor:Theme.of(context).accentColor, 
                           value: rightbool, 
                           onChanged:(newValue) {
                             setState((){

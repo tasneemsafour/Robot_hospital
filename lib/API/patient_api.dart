@@ -16,7 +16,6 @@ Future<List<Patient>> gitAllPatients() async {
   var jsonData = json.decode(patientData.body);
   List<Patient> allPatient = [];
   for (var patient in jsonData) {
-    print(allPatient.length.toString() + "///////////////");
     allPatient.add(Patient.fromJson(patient));
   }
   print(allPatient.length.toString() + "///////////////");
