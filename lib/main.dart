@@ -53,7 +53,7 @@ class _MyAppState extends State<MyApp> {
             home: AnimatedSplashScreen(
               splash: ('assets/images/robpng.png'),
               backgroundColor: Colors.blue[200],
-              nextScreen:MyHomePage(),
+              nextScreen:slider(),
             ),
             debugShowCheckedModeBanner: false,
             routes: <String, WidgetBuilder>{
