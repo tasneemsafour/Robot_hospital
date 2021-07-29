@@ -7,8 +7,6 @@ class LoginSuccessScreen extends StatefulWidget {
   _LoginSuccessScreenState createState() => _LoginSuccessScreenState();
   static String routName= 'LoginSuccessScreen';
 }
-
-
 class _LoginSuccessScreenState extends State<LoginSuccessScreen> {
   @override
   Widget build(BuildContext context) {
