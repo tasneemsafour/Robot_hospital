@@ -33,13 +33,11 @@ class MyApp extends StatefulWidget {
   @override
   _MyAppState createState() => _MyAppState();
 }
-
 class _MyAppState extends State<MyApp> {
   @override
   void initState() {
     super.initState();
   }
-
   @override
   Widget build(BuildContext context) {
     return MultiBlocProvider(
@@ -55,7 +53,7 @@ class _MyAppState extends State<MyApp> {
             home: AnimatedSplashScreen(
               splash: ('assets/images/robpng.png'),
               backgroundColor: Colors.blue[200],
-              nextScreen:CarouselDemo(),
+              nextScreen:MyHomePage(),
             ),
             debugShowCheckedModeBanner: false,
             routes: <String, WidgetBuilder>{
@@ -79,7 +77,6 @@ class _MyAppState extends State<MyApp> {
               HomePage.routName:(ctx)=>HomePage(),
               MyHomePage.routName:(ctx)=>MyHomePage(),
               CarouselDemoState.routName:(ctx)=>Home_screen(),
-
             }));
   }
 }

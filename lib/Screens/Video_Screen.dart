@@ -9,7 +9,7 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  final _channelName = TextEditingController();
+  final _channelName = 'firstchannel';
   String check = '';
 
   @override
@@ -20,7 +20,7 @@ class _MyHomePageState extends State<MyHomePage> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
-              Container(
+              /*Container(
                 width: MediaQuery.of(context).size.width * 0.85,
                 height: MediaQuery.of(context).size.height * 0.2,
                 child: TextFormField(
@@ -33,8 +33,8 @@ class _MyHomePageState extends State<MyHomePage> {
                     hintText: 'Channel Name',
                   ),
                 ),
-              ),
-              TextButton(
+              ),*/
+              /*TextButton(
                 onPressed: () => onJoin(isBroadcaster: false),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
@@ -48,7 +48,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     )
                   ],
                 ),
-              ),
+              ),*/
               TextButton(
                 style: TextButton.styleFrom(
                   primary: Colors.pink,
@@ -80,7 +80,7 @@ class _MyHomePageState extends State<MyHomePage> {
     Navigator.of(context).push(
       MaterialPageRoute(
         builder: (context) => BroadcastPage(
-          channelName: _channelName.text,
+          channelName: _channelName,
           isBroadcaster: isBroadcaster,
         ),
       ),
