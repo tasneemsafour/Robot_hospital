@@ -15,7 +15,6 @@ Future<List<chargingStation>> getBioLab() async {
       });
   var jsonData = json.decode(Dataa.body);
   List<chargingStation> ch_all = [];
-
   for (var t in jsonData) {
     ch_all.add(chargingStation.fromJson(t));
   }
