@@ -41,7 +41,7 @@ dependencies:
   control_pad: ^1.1.1+1
   joystick: ^1.1.0
   web_socket_channel: ^2.1.0
-  dart_amqp: ^0.1.5
+  dart_amqp: ^0.2.0
   flutter_switch: ^0.3.1
   # recording words
   speech_to_text: ^3.1.0

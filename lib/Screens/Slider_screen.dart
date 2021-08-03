@@ -27,6 +27,14 @@ class _sliderState extends State<slider> {
 
   //Next Screen
   void _nextScreen(BuildContext cont) {
+    /**
+    MultiBlocProvider(
+      providers: [
+        BlocProvider(
+            create: (context) => AuthBloc(loginInitState(), Login_Api()))
+      ],
+    );
+        **/
     Navigator.of(cont).pushReplacementNamed(sign_up.routName);
   }
 
@@ -40,6 +48,7 @@ class _sliderState extends State<slider> {
           borderRadius: BorderRadius.circular(15)),
     );
   }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(

@@ -1,5 +1,6 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
+
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:hospital_application/Models/home_item.dart';
@@ -28,6 +29,7 @@ class CarouselDemoState extends State<CarouselDemo> {
     }
     return result;
   }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -97,6 +99,7 @@ class CarouselDemoState extends State<CarouselDemo> {
             SizedBox(
               height: 20.0,
             ),
+
           ],
         ),
       ),

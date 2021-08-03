@@ -7,6 +7,7 @@ import 'package:hospital_application/Screens/Tasks_screen.dart';
 
 class PationtProfile_screen extends StatelessWidget {
   static const routeName = '/pationtProfile';
+
   Widget _infoCol(String title, String info) {
     return Container(
       color: Colors.white,
