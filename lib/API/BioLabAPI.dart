@@ -1,5 +1,4 @@
 import 'dart:io';
-import 'package:hospital_application/ConfigServer.dart';
 import 'package:http/http.dart' as http;
 import 'package:hospital_application/Models/chargingStationModel.dart';
 import 'dart:convert';
@@ -7,7 +6,7 @@ import '../Models/chargingStationModel.dart';
 import 'package:hospital_application/Models/token.dart';
 Future<List<chargingStation>> getBioLab() async {
   final Dataa = await http.get(
-      Uri.parse("http://" + ConfigServer.IP + ":" + ConfigServer.Port + "/Places/Places/BiolabsAPI/"),
+      Uri.parse("http://192.168.0.105:443/Places/Places/BiolabsAPI/"),
       headers: {
         HttpHeaders.contentTypeHeader: "application/json",
         HttpHeaders.authorizationHeader:
@@ -16,6 +15,7 @@ Future<List<chargingStation>> getBioLab() async {
       });
   var jsonData = json.decode(Dataa.body);
   List<chargingStation> ch_all = [];
+
   for (var t in jsonData) {
     ch_all.add(chargingStation.fromJson(t));
   }
