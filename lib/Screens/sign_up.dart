@@ -11,12 +11,10 @@ import 'package:hospital_application/blocs/auth_state.dart';
 
 class sign_up extends StatefulWidget {
   const sign_up({Key key}) : super(key: key);
-
   @override
   _sign_upState createState() => _sign_upState();
   static String routName = 'sign_up';
 }
-
 class _sign_upState extends State<sign_up> {
   bool signupbool = true;
 
