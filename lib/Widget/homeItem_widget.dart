@@ -51,14 +51,12 @@ class homeItem extends StatelessWidget {
                  padding: EdgeInsets.only(top: 60),
                  height: MediaQuery.of(context).size.height*0.65,
                  //color: Colors.deepOrange,
-                 child: Center(
-                   child: ClipRRect(
-                         borderRadius: BorderRadius.all(Radius.circular(20))
-                         ,
-                         child:Image.asset(item.img,fit: BoxFit.fill,
-                         ),
+                 child: ClipRRect(
+                       borderRadius: BorderRadius.all(Radius.circular(20))
+                       ,
+                       child:Image.asset(item.img,fit: BoxFit.fill,
                        ),
-                 ),
+                     ),
                ),
                 Container(
                   width: MediaQuery.of(context).size.width,
@@ -68,7 +66,7 @@ class homeItem extends StatelessWidget {
                    style: TextStyle(
                      fontWeight: FontWeight.bold,
                      color: Theme.of(context).accentColor,
-                     fontSize: 24,
+                     fontSize: 18,
                    )
                    ),
                  ),
