@@ -8,7 +8,8 @@ class BroadcastPage extends StatefulWidget {
   final String channelName;
   final bool isBroadcaster;
 
-  const BroadcastPage({Key key, this.channelName, this.isBroadcaster}) : super(key: key);
+  const BroadcastPage({Key key, this.channelName, this.isBroadcaster})
+      : super(key: key);
 
   @override
   _BroadcastPageState createState() => _BroadcastPageState();
@@ -99,50 +100,50 @@ class _BroadcastPageState extends State<BroadcastPage> {
   Widget _toolbar() {
     return widget.isBroadcaster
         ? Container(
-      alignment: Alignment.bottomCenter,
-      padding: const EdgeInsets.symmetric(vertical: 48),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: <Widget>[
-          RawMaterialButton(
-            onPressed: _onToggleMute,
-            child: Icon(
-              muted ? Icons.mic_off : Icons.mic,
-              color: muted ? Colors.white : Colors.blueAccent,
-              size: 20.0,
+            alignment: Alignment.bottomCenter,
+            padding: const EdgeInsets.symmetric(vertical: 48),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[
+                RawMaterialButton(
+                  onPressed: _onToggleMute,
+                  child: Icon(
+                    muted ? Icons.mic_off : Icons.mic,
+                    color: muted ? Colors.white : Colors.blueAccent,
+                    size: 20.0,
+                  ),
+                  shape: CircleBorder(),
+                  elevation: 2.0,
+                  fillColor: muted ? Colors.blueAccent : Colors.white,
+                  padding: const EdgeInsets.all(12.0),
+                ),
+                RawMaterialButton(
+                  onPressed: () => _onCallEnd(context),
+                  child: Icon(
+                    Icons.call_end,
+                    color: Colors.white,
+                    size: 35.0,
+                  ),
+                  shape: CircleBorder(),
+                  elevation: 2.0,
+                  fillColor: Colors.redAccent,
+                  padding: const EdgeInsets.all(15.0),
+                ),
+                RawMaterialButton(
+                  onPressed: _onSwitchCamera,
+                  child: Icon(
+                    Icons.switch_camera,
+                    color: Colors.blueAccent,
+                    size: 20.0,
+                  ),
+                  shape: CircleBorder(),
+                  elevation: 2.0,
+                  fillColor: Colors.white,
+                  padding: const EdgeInsets.all(12.0),
+                ),
+              ],
             ),
-            shape: CircleBorder(),
-            elevation: 2.0,
-            fillColor: muted ? Colors.blueAccent : Colors.white,
-            padding: const EdgeInsets.all(12.0),
-          ),
-          RawMaterialButton(
-            onPressed: () => _onCallEnd(context),
-            child: Icon(
-              Icons.call_end,
-              color: Colors.white,
-              size: 35.0,
-            ),
-            shape: CircleBorder(),
-            elevation: 2.0,
-            fillColor: Colors.redAccent,
-            padding: const EdgeInsets.all(15.0),
-          ),
-          RawMaterialButton(
-            onPressed: _onSwitchCamera,
-            child: Icon(
-              Icons.switch_camera,
-              color: Colors.blueAccent,
-              size: 20.0,
-            ),
-            shape: CircleBorder(),
-            elevation: 2.0,
-            fillColor: Colors.white,
-            padding: const EdgeInsets.all(12.0),
-          ),
-        ],
-      ),
-    )
+          )
         : Container();
   }
 
@@ -158,11 +159,27 @@ class _BroadcastPageState extends State<BroadcastPage> {
 
   /// Video view row wrapper
   Widget _expandedVideoView(List<Widget> views) {
-    final wrappedViews = views.map<Widget>((view) => Expanded(child: Container(child: view))).toList();
+    final wrappedViews = views
+        .map<Widget>((view) => Expanded(child: Container(child: view)))
+        .toList();
+    print("lllllllllllllllllllllllllll" + wrappedViews.length.toString());
     return Expanded(
-      child: Row(
-        children: wrappedViews,
+      child: Stack(
+        children: [
+          Center(child: wrappedViews[0]),
+          wrappedViews.length == 2
+              ? Align(
+                  alignment: Alignment.topLeft,
+                  child: Container(
+                    width: 200,
+                    height: 200,
+                    child: wrappedViews[1],
+                  ),
+                )
+              : Container(),
+        ],
       ),
+      // children: wrappedViews
     );
   }
 
@@ -173,31 +190,36 @@ class _BroadcastPageState extends State<BroadcastPage> {
       case 1:
         return Container(
             child: Column(
-              children: <Widget>[
-                _expandedVideoView([views[0]])
-              ],
-            ));
+          children: <Widget>[
+            _expandedVideoView([views[0]])
+          ],
+        ));
       case 2:
         return Container(
             child: Column(
-              children: <Widget>[
-                _expandedVideoView([views[0]]),
-                _expandedVideoView([views[1]])
-              ],
-            ));
+          children: <Widget>[
+            _expandedVideoView([views[0]]),
+            _expandedVideoView([views[1]])
+          ],
+        ));
       case 3:
         return Container(
             child: Column(
-              children: <Widget>[_expandedVideoView(views.sublist(0, 2)), _expandedVideoView(views.sublist(2, 3))],
-            ));
+          children: <Widget>[
+            _expandedVideoView(views.sublist(0, 2)),
+            _expandedVideoView(views.sublist(2, 3))
+          ],
+        ));
       case 4:
         return Container(
             child: Column(
-              children: <Widget>[_expandedVideoView(views.sublist(0, 2)), _expandedVideoView(views.sublist(2, 4))],
-            ));
+          children: <Widget>[
+            _expandedVideoView(views.sublist(0, 2)),
+            _expandedVideoView(views.sublist(2, 4))
+          ],
+        ));
       default:
     }
-    return Container();
   }
 
   void _onCallEnd(BuildContext context) {
@@ -215,3 +237,5 @@ class _BroadcastPageState extends State<BroadcastPage> {
     _engine.switchCamera();
   }
 }
+
+P(Widget wrappedView) {}

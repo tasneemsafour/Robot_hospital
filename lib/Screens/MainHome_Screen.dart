@@ -17,7 +17,7 @@ class CarouselDemo extends StatefulWidget {
 }
 
 class CarouselDemoState extends State<CarouselDemo> {
-  static String routName = 'HomeScreen';
+  static String routName = 'CarouselDemoState';
   CarouselSlider carouselSlider;
   int _current = 0;
 
@@ -28,11 +28,12 @@ class CarouselDemoState extends State<CarouselDemo> {
     }
     return result;
   }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Home" ,style: TextStyle (color: Colors.white) ),
+        title: Text("Home", style: TextStyle(color: Colors.white)),
         backgroundColor: Theme.of(context).accentColor,
       ),
       drawer: Drawer_Widget(),
@@ -49,8 +50,8 @@ class CarouselDemoState extends State<CarouselDemo> {
                     _current = index;
                   });
                 },
-                height: MediaQuery.of(context).size.height*0.6,
-                
+                height: MediaQuery.of(context).size.height * 0.6,
+
                 initialPage: 0,
                 enlargeCenterPage: true,
                 autoPlay: true,
@@ -58,7 +59,7 @@ class CarouselDemoState extends State<CarouselDemo> {
                 enableInfiniteScroll: true,
                 autoPlayInterval: Duration(seconds: 2),
                 autoPlayAnimationDuration: Duration(milliseconds: 2000),
-                
+
                 //pauseAutoPlayOnTouch: Duration(seconds: 10),
                 scrollDirection: Axis.horizontal,
               ),
@@ -69,9 +70,9 @@ class CarouselDemoState extends State<CarouselDemo> {
                       width: MediaQuery.of(context).size.width,
                       margin: EdgeInsets.symmetric(horizontal: 10.0),
                       decoration: BoxDecoration(
-                        //color: Colors.cyan,
-                      ),
-                      child:homeItem(item),
+                          //color: Colors.cyan,
+                          ),
+                      child: homeItem(item),
                     );
                   },
                 );
@@ -89,7 +90,8 @@ class CarouselDemoState extends State<CarouselDemo> {
                   margin: EdgeInsets.symmetric(vertical: 10.0, horizontal: 2.0),
                   decoration: BoxDecoration(
                     shape: BoxShape.circle,
-                    color: _current == index ? Colors.blue[200] : Colors.grey[300],
+                    color:
+                        _current == index ? Colors.blue[200] : Colors.grey[300],
                   ),
                 );
               }),

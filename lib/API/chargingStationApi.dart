@@ -4,16 +4,15 @@ import 'package:http/http.dart' as http;
 import 'dart:convert';
 import '../Models/chargingStationModel.dart';
 import 'package:hospital_application/Models/token.dart';
+
 Future<List<chargingStation>> getChargingStation() async {
-  String token2= "token "+token.tokenName;
+  String token2 = "token " + tokenAPI.tokenName;
 
-  final Dataa = await http.get(
-      Uri.parse(token.url+"/Places/ChargingStationAPI/"),
-      headers: {
-        HttpHeaders.contentTypeHeader: "application/json",
-        HttpHeaders.authorizationHeader:token2
-
-      });
+  final Dataa = await http
+      .get(Uri.parse(tokenAPI.url + "/Places/ChargingStationAPI/"), headers: {
+    HttpHeaders.contentTypeHeader: "application/json",
+    HttpHeaders.authorizationHeader: token2
+  });
   var jsonData = json.decode(Dataa.body);
   List<chargingStation> ch_all = [];
 

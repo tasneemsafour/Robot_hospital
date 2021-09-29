@@ -2,11 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:animated_splash_screen/animated_splash_screen.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:hospital_application/API/login_api.dart';
-import 'package:hospital_application/Screens/LoginSuccessScreen.dart';
+import 'package:hospital_application/Screens/MainHome_Screen.dart';
 import 'package:hospital_application/Screens/Slider_screen.dart';
 import 'package:hospital_application/Screens/Speech_Screen.dart';
 import 'package:hospital_application/Screens/Tasks_screen.dart';
 import 'package:hospital_application/Screens/Video_Screen.dart';
+import 'package:hospital_application/Screens/addUrl.dart';
 import 'package:hospital_application/Screens/charging_screen.dart';
 import 'package:hospital_application/Screens/foodScreen.dart';
 import 'package:hospital_application/Screens/taskParameter.dart';
@@ -23,7 +24,6 @@ import 'Screens/controll_screen.dart';
 import './Screens/Controls/Joystick_screen.dart';
 import './Screens/Controls/movementAction.dart';
 import './Screens/Controls/setting_screen.dart';
-import './Screens/MainHome_Screen.dart';
 
 void main() {
   runApp(MyApp());
@@ -33,11 +33,13 @@ class MyApp extends StatefulWidget {
   @override
   _MyAppState createState() => _MyAppState();
 }
+
 class _MyAppState extends State<MyApp> {
   @override
   void initState() {
     super.initState();
   }
+
   @override
   Widget build(BuildContext context) {
     return MultiBlocProvider(
@@ -53,13 +55,12 @@ class _MyAppState extends State<MyApp> {
             home: AnimatedSplashScreen(
               splash: ('assets/images/robpng.png'),
               backgroundColor: Colors.blue[200],
-              nextScreen:slider(),
+              nextScreen: slider(),
             ),
             debugShowCheckedModeBanner: false,
             routes: <String, WidgetBuilder>{
               slider.routName: (ctx) => slider(),
               taskScreen.routName: (ctx) => taskScreen(),
-              LoginSuccessScreen.routName: (ctx) => LoginSuccessScreen(),
               sign_up.routName: (ctx) => sign_up(),
               PationtScreen.routName: (ctx) => PationtScreen(),
               PationtProfile_screen.routeName: (ctx) => PationtProfile_screen(),
@@ -68,15 +69,17 @@ class _MyAppState extends State<MyApp> {
               medicineScreen.routName: (ctx) => medicineScreen(),
               chargingScreen.routName: (ctx) => chargingScreen(),
               sort_TaskScreen.routName: (ctx) => sort_TaskScreen(),
-              Home_screen.routName: (ctx) => Home_screen(),
+              //Home_screen.routName: (ctx) => Home_screen(), // old screen
               MapScreen.routName: (ctx) => MapScreen(),
               controll_screen.routName: (ctx) => controll_screen(),
-              Joystick_screen.routeName:(ctx)=>Joystick_screen(),
-              Setting_Screen.routeName:(ctx)=>Setting_Screen(),
-              MovementAction.routName:(ctx)=>MovementAction(),
-              HomePage.routName:(ctx)=>HomePage(),
-              MyHomePage.routName:(ctx)=>MyHomePage(),
-              CarouselDemoState.routName:(ctx)=>Home_screen(),
+              Joystick_screen.routeName: (ctx) => Joystick_screen(),
+              Setting_Screen.routeName: (ctx) => Setting_Screen(),
+              MovementAction.routName: (ctx) => MovementAction(),
+              HomePage.routName: (ctx) => HomePage(), // speech
+
+              MyHomePage.routName: (ctx) => MyHomePage(), // video call
+              CarouselDemoState.routName: (ctx) => CarouselDemo(), // new main
+              addUrl.routName: (ctx) => addUrl(),
             }));
   }
 }

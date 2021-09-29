@@ -2,11 +2,12 @@ import 'package:hospital_application/blocs/auth_events.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
 import 'package:hospital_application/Models/token.dart';
+
 class Login_Api {
   login(String username, String password) async {
     //http://192.168.0.105:443
     final response = await http.post(
-        Uri.parse( token.url+"/api-token-auth/"),
+        Uri.parse(tokenAPI.url + "/api-token-auth/"),
         body: {"username": username, "password": password},
         headers: {});
     final data = json.decode(response.body);

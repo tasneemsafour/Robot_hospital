@@ -3,14 +3,15 @@ import 'package:hospital_application/Models/PersonModels.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
 import 'package:hospital_application/Models/token.dart';
-Future<List<Person>> getPerson() async {
-  String token2= "token "+token.tokenName;
 
-  final Dataa = await http
-      .get(Uri.parse(token.url+"/Person/PersonAPI/"), headers: {
+Future<List<Person>> getPerson() async {
+  String token2 = "token " + tokenAPI.tokenName;
+
+  final Dataa =
+      await http.get(Uri.parse(tokenAPI.url + "/Person/PersonAPI/"), headers: {
     HttpHeaders.contentTypeHeader: "application/json",
-    HttpHeaders.authorizationHeader:token2
-        //"token b194bda7a92bc7000d569b830a565a89a2b66993"
+    HttpHeaders.authorizationHeader: token2
+    //"token b194bda7a92bc7000d569b830a565a89a2b66993"
   });
   var jsonData = json.decode(Dataa.body);
   List<Person> ch_all = [];

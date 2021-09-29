@@ -15,7 +15,7 @@ class SliderTitle extends StatelessWidget {
         children: <Widget>[
           SizedBox(
             height: MediaQuery.of(context).size.height * 0.5,
-            width: MediaQuery.of(context).size.width,
+            width: MediaQuery.of(context).size.width * 0.3,
             child: Container(
               decoration: BoxDecoration(
                   borderRadius: BorderRadius.only(

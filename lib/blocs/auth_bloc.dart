@@ -4,7 +4,8 @@ import 'package:hospital_application/API/login_api.dart';
 import 'package:hospital_application/blocs/auth_events.dart';
 import 'package:hospital_application/blocs/auth_state.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import'package:hospital_application/Models/token.dart';
+import 'package:hospital_application/Models/token.dart';
+
 class AuthBloc extends Bloc<AuthEvent, AuthState> {
   Login_Api log;
   AuthBloc(AuthState initialState, this.log) : super(initialState);
@@ -22,7 +23,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
         yield LoginErrorState(msg: "Invalid Username or Password");
       } else {
         pref.setString("token", data["token"]);
-        token.addtoken(data['token']);
+        tokenAPI.addtoken(data['token']);
         yield DoctorLoginSuccState();
       }
     } else {
