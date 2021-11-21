@@ -52,13 +52,15 @@ dependencies:
 
   # launch apps, browser & email
   url_launcher: ^5.7.10
-
+  flutter_sound:
+  sound_stream:
   # copy text to clipboard
   clipboard: ^0.1.2+8
   #video call
   agora_rtc_engine: 3.3.3
   permission_handler:
 
+  mic_stream:
 
 dev_dependencies:
   flutter_test:
@@ -106,3 +108,10 @@ flutter:
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
+  plugin:
+    platforms:
+      android:
+        package: vn.casperpas.sound_stream
+        pluginClass: SoundStreamPlugin
+      ios:
+        pluginClass: SoundStreamPlugin

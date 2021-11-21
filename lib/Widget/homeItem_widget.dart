@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hospital_application/Models/home_item.dart';
+import 'package:hospital_application/Screens/RecordsCREEN.dart';
 import '../Models/home_item.dart';
 import 'package:hospital_application/Screens/Speech_Screen.dart';
 import 'package:hospital_application/Screens/Video_Screen.dart';
@@ -19,7 +20,7 @@ class homeItem extends StatelessWidget {
       Navigator.of(context).pushNamed(HomePage.routName);
     }
     if (action == 3) {
-      Navigator.of(context).pushNamed(MapScreen.routName);
+      Navigator.of(context).pushNamed(mapScreen.routName);
     }
     if (action == 4) {
       Navigator.of(context).pushNamed(MyHomePage.routName);
@@ -30,6 +31,10 @@ class homeItem extends StatelessWidget {
     }
     if (action == 6) {
       Navigator.of(context).pushNamed(chargingScreen.routName);
+      //Not implement yet
+    }
+    if (action == 7) {
+      Navigator.of(context).pushNamed(Record.routName);
       //Not implement yet
     }
   }

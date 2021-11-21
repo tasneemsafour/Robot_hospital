@@ -7,6 +7,8 @@ import 'package:clipboard/clipboard.dart';
 import 'package:flutter/material.dart';
 import 'package:hospital_application/API/speech_api.dart';
 import 'package:hospital_application/ConfigServer.dart';
+import 'package:hospital_application/Data/maplist.dart';
+import 'package:hospital_application/Screens/MapScreen.dart';
 import 'package:hospital_application/Widget/substring_highlighted.dart';
 import 'package:hospital_application/utils.dart';
 import 'package:http/http.dart' as http;
@@ -17,7 +19,6 @@ class HomePage extends StatefulWidget {
   @override
   _HomePageState createState() => _HomePageState();
 }
-
 class _HomePageState extends State<HomePage> {
   String text = 'Press the button and start speaking';
   bool isListening = false;
@@ -100,9 +101,6 @@ class _HomePageState extends State<HomePage> {
       ),
     ),
   );
-
-
-
   void ReceiveNotificationFromRabitMQ() async{
     Client client = Client( settings: new ConnectionSettings(
         host: ConfigServer.IP,
@@ -129,9 +127,6 @@ class _HomePageState extends State<HomePage> {
       // replying, ack-ing and rejecting
     });
   }
-
-
-
   Future toggleRecording() => SpeechApi.toggleRecording(
       onResult: (text) =>
           setState(() => this.text = text),
@@ -139,7 +134,7 @@ class _HomePageState extends State<HomePage> {
 
         setState(() => this.isListening = isListening);
         if (!isListening) {
-          print("hebbbbbbbbbbaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa");
+          print("tasneeeeeeeeeeeeeeeeeeeem");
           Timer(Duration(seconds: 1), () async {
             Utils.scanText(text);
             Map<String, String> dictToSend = {'Task': text};
@@ -152,9 +147,44 @@ class _HomePageState extends State<HomePage> {
               Dict = {"msg": text};
             }
             else {
-              url += "SendTask/";
-              Dict = {"Task": text};
-            }
+              String distination;
+                print(text+ "teeeextttttttttttttttttttttt");
+                for (int i =0 ; i<Rooms.length ; i++)
+                {
+                  for(int j=0 ; j<Rooms[i].name.length ; j++)
+                  {
+
+                    if(text.contains(Rooms[i].name[j])) //true
+                        {
+                      distination = Rooms[i].name[j];
+                      print("----------------------------------------------------------------------------------");
+                      print("the destination is $distination");
+                     int  index = i;
+                      print("the index of the $index");
+                      Navigator.of(context).push(
+                          MaterialPageRoute(
+                          builder: (context) => mapScreen(
+                            Text : distination,
+                             index :index ,
+                      ),) ,);
+
+
+                  }
+                }
+              }
+              /*if(text.compareTo("عايز اروح") == 0 || text.compareTo("وديني") == 0 || text.contains("قاعة ") ||
+                  text.compareTo("مكان") == 0 || text.contains("مؤتمرات"))
+                 {
+                   print ("textttttttt" + text) ;
+                    Navigator.of(context).push(
+                     MaterialPageRoute(
+                       builder: (context) => mapScreen(
+                       text1 : text
+                       ),
+                     ),
+                   );
+                 }*/
+             }
             var re = await http.post(
                 Uri.parse(url),
                 body: Dict,

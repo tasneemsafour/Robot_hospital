@@ -49,5 +49,11 @@ final  DummyHomeItems =  [
       subtitle: "Charging places",
       event: "",
       img: "assets/images/H7.jpg",
-      action: 6)
+      action: 6),
+  HomeItem(
+      title: "Recorder",
+      subtitle: "voice recorder",
+      event: "",
+      img: "assets/images/RemoveImage.png",
+      action: 7)
       ];

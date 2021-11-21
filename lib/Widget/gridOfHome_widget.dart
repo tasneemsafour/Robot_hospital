@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:hospital_application/Models/Task_Model.dart';
 import 'package:hospital_application/Models/task_categoryClass.dart';
+import 'package:hospital_application/Screens/RecordsCREEN.dart';
 import 'package:hospital_application/Screens/Speech_Screen.dart';
 import 'package:hospital_application/Screens/Video_Screen.dart';
 import 'package:hospital_application/Screens/charging_screen.dart';
@@ -13,7 +14,7 @@ import 'package:hospital_application/Screens/MapScreen.dart';
 
 
 class GridDashboard extends StatelessWidget {
-  //--------------------------------------------------------------------------
+
   void selectCategory(BuildContext context, int action) {
     if (action == 1) {
       Navigator.of(context).pushNamed(PationtScreen.routName);
@@ -22,7 +23,7 @@ class GridDashboard extends StatelessWidget {
       Navigator.of(context).pushNamed(HomePage.routName);
     }
     if (action == 3) {
-      Navigator.of(context).pushNamed(MapScreen.routName);
+      Navigator.of(context).pushNamed(mapScreen.routName);
     }
     if (action == 4) {
       Navigator.of(context).pushNamed(MyHomePage.routName);
@@ -33,6 +34,10 @@ class GridDashboard extends StatelessWidget {
     }
     if (action == 6) {
       Navigator.of(context).pushNamed(chargingScreen.routName);
+      //Not implement yet
+    }
+    if (action == 7) {
+      Navigator.of(context).pushNamed(Record.routName);
       //Not implement yet
     }
   }
@@ -136,9 +141,15 @@ class GridDashboard extends StatelessWidget {
       event: "",
       img: "assets/images/charging.png",
       action: 6);
+  Items item7 = new Items(
+      title: "Record",
+      subtitle: "Record",
+      event: "",
+      img: "assets/images/RemoveImage.png",
+      action: 7);
   @override
   Widget build(BuildContext context) {
-    List<Items> myList = [item1, item2, item3, item4, item5, item6];
+    List<Items> myList = [item1, item2, item3, item4, item5, item6, item7];
     
     // var color = Colors.blue[400];
     return ListView(

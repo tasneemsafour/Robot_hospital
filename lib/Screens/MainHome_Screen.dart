@@ -7,6 +7,7 @@ import 'package:hospital_application/Screens/Drawer.dart';
 import 'package:hospital_application/Widget/gridOfHome_widget.dart';
 import 'package:hospital_application/Widget/homeItem_widget.dart';
 
+
 class CarouselDemo extends StatefulWidget {
   CarouselDemo() : super();
 
@@ -28,7 +29,6 @@ class CarouselDemoState extends State<CarouselDemo> {
     }
     return result;
   }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(

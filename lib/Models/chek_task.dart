@@ -62,9 +62,12 @@ class check_task {
         "patientid": patientId.toString(),
         "text": "questions",
       });
-    } else if (taskName == "display location X to Y") {
+    }
+    /*else if (taskName == "display location X to Y") {
       Navigator.of(context).pushNamed(MapScreen.routName, arguments: {});
-    } else if (taskName == "hand control") {
+
+    }  */
+    else if (taskName == "hand control") {
       Navigator.of(context).pushNamed(controll_screen.routName, arguments: {});
     } else if (taskName == "go to charging station") {
       Navigator.of(context).pushNamed(chargingScreen.routName, arguments: {});

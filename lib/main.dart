@@ -15,6 +15,7 @@ import './Screens/home-screen.dart';
 import 'package:hospital_application/Screens/sign_up.dart';
 import 'package:hospital_application/blocs/auth_bloc.dart';
 import 'package:hospital_application/blocs/auth_state.dart';
+import 'Screens/RecordsCREEN.dart';
 import 'Screens/patientProfile_screen.dart';
 import 'Screens/patients_screen.dart';
 import 'Screens/medicineScreen.dart';
@@ -55,13 +56,14 @@ class _MyAppState extends State<MyApp> {
             home: AnimatedSplashScreen(
               splash: ('assets/images/robpng.png'),
               backgroundColor: Colors.blue[200],
-              nextScreen: slider(),
+              nextScreen: CarouselDemo(),
             ),
             debugShowCheckedModeBanner: false,
             routes: <String, WidgetBuilder>{
               slider.routName: (ctx) => slider(),
               taskScreen.routName: (ctx) => taskScreen(),
               sign_up.routName: (ctx) => sign_up(),
+              Record.routName: (ctx) => Record(),
               PationtScreen.routName: (ctx) => PationtScreen(),
               PationtProfile_screen.routeName: (ctx) => PationtProfile_screen(),
               taskParameter.routName: (ctx) => taskParameter(),
@@ -70,16 +72,17 @@ class _MyAppState extends State<MyApp> {
               chargingScreen.routName: (ctx) => chargingScreen(),
               sort_TaskScreen.routName: (ctx) => sort_TaskScreen(),
               //Home_screen.routName: (ctx) => Home_screen(), // old screen
-              MapScreen.routName: (ctx) => MapScreen(),
+              mapScreen.routName: (ctx) => mapScreen( Text :" ",index:0),
               controll_screen.routName: (ctx) => controll_screen(),
               Joystick_screen.routeName: (ctx) => Joystick_screen(),
               Setting_Screen.routeName: (ctx) => Setting_Screen(),
               MovementAction.routName: (ctx) => MovementAction(),
               HomePage.routName: (ctx) => HomePage(), // speech
-
               MyHomePage.routName: (ctx) => MyHomePage(), // video call
               CarouselDemoState.routName: (ctx) => CarouselDemo(), // new main
               addUrl.routName: (ctx) => addUrl(),
-            }));
+            }
+        ),
+    );
   }
 }
